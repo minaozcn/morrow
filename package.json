@@ -1,0 +1,42 @@
+{
+  "name": "morrow",
+  "productName": "Morrow",
+  "version": "0.1.0",
+  "description": "Morrow \u2014 minimal vintage botanical to-do widget for Windows",
+  "author": "Mina",
+  "main": "src/main/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "build": "electron-builder --win nsis --x64 --publish never"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "electron": "31.7.7",
+    "electron-builder": "26.18.0",
+    "vitest": "3.2.7"
+  },
+  "build": {
+    "appId": "com.morrow.widget",
+    "productName": "Morrow",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "artifactName": "Morrow-Setup-${version}.exe",
+      "shortcutName": "Morrow"
+    },
+    "publish": null
+  }
+}

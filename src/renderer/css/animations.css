@@ -1,0 +1,82 @@
+/* UI_SPEC §11 — kısa ve yumuşak geçişler */
+.task-card {
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.task-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.drag-handle,
+.card-icon,
+.priority-none {
+  transition: opacity 150ms ease;
+}
+
+.completed-arrow {
+  transition: transform 150ms ease;
+}
+
+/* Tamamlama: el çizimi çizgi soldan sağa çizilir */
+.task-card.is-completing .task-text {
+  background: url('../assets/images/strike.svg') no-repeat left center / 0% 10px;
+  animation: strike-draw 280ms ease-out forwards;
+  transition: color 280ms ease;
+  color: var(--gray-soft);
+}
+
+@keyframes strike-draw {
+  to { background-size: 100% 10px; }
+}
+
+/* Geri yükleme: kısa dönüş geçişi */
+.task-card.is-restored {
+  animation: card-return 220ms ease-out;
+}
+
+@keyframes card-return {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Öncelik menüsü: yumuşak fade + scale */
+.priority-menu {
+  transform-origin: top left;
+  animation: menu-in 120ms ease-out;
+}
+
+@keyframes menu-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: none; }
+}
+
+.priority-dot {
+  transition: transform 120ms ease, opacity 150ms ease;
+}
+
+/* Sürüklenen kart imleci gecikmesiz takip eder */
+.task-card.is-dragging {
+  transition: none;
+}
+
+/* Bildirimler: yumuşak fade in/out */
+.notification {
+  animation: note-in 180ms ease-out;
+}
+
+.notification.is-leaving {
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+@keyframes note-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Ayar anahtarı */
+.switch,
+.switch::after {
+  transition: background-color 150ms ease, transform 150ms ease;
+}

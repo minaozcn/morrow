@@ -1,0 +1,36 @@
+:root {
+  /* UI_SPEC §3 — Color Palette */
+  --sage: #A5B49B;
+  --sage-dark: #71846D;
+  --olive-deep: #435440;
+  --green-muted: #64725E;
+  --cream: #F5EBD9;
+  --brown-warm: #514B40;
+  --gray-soft: #8B8A78;
+  --priority-high: #C76F68;
+  --priority-medium: #D7B65D;
+  --priority-low: #799B72;
+
+  /* UI_SPEC §4 — Typography (D-04) */
+  --font-title: 'Caveat', cursive;
+  --font-body: 'Lora', Georgia, serif;
+  --size-title: 29px;
+  --size-task: 13.5px;
+  --size-date: 12px;
+
+  /* UI_SPEC §2, §5, §6 — Dimensions & spacing */
+  --widget-radius: 16px;
+  --widget-padding: 20px;
+  --card-radius: 10px;
+  --card-gap: 8px;
+  --card-padding-x: 12px;
+  --card-height: 38px;
+  --dot-size: 10px;
+
+  /* Shadows */
+  --card-shadow: 0 1px 2px rgba(67, 84, 64, 0.12), 0 1px 1px rgba(67, 84, 64, 0.06);
+  --card-shadow-hover: 0 3px 8px rgba(67, 84, 64, 0.16), 0 1px 2px rgba(67, 84, 64, 0.10);
+
+  --divider: rgba(67, 84, 64, 0.28);
+  --texture: url('../assets/images/paper-texture.png');
+}

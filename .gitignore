@@ -1,0 +1,15 @@
+node_modules/
+dist/
+out/
+*.log
+test-results/
+playwright-report/
+
+# Local assistant notes and preview images
+CLAUDE.md
+Claude outputs/
+
+# OS / editor
+Thumbs.db
+desktop.ini
+.vscode/
